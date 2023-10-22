@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class NotificationController {
 
     @PostMapping("/notification")
-    public String notificationMessage(@RequestBody NotificationRequest notificationRequest) {
-        String notification = String.format("Successfully registered");
+    public String notificationMessage(@RequestBody UserDetails userDetails) {
+        String notification = String.format("Successfully registered user :%s", userDetails.getName());
         return notification;
     }
 }
